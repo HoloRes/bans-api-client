@@ -11,7 +11,7 @@ const ContentHandler_1 = __importDefault(require("./client/ContentHandler"));
 class BansApiClient {
     constructor(config) {
         var _a, _b;
-        this.url = (_a = config.url) !== null && _a !== void 0 ? _a : 'https://bans-api.suisei.app';
+        this.url = (_a = config.url) !== null && _a !== void 0 ? _a : 'https://bans-api.suisei.app/v1';
         this.amqpEndpoint = (_b = config.amqp.endpoint) !== null && _b !== void 0 ? _b : 'bans-api.suisei.app:30555';
         this.amqpHandler = new AmqpHandler_1.default(`amqp://${config.amqp.username}:${config.apiKey}@${this.amqpEndpoint}`, config.amqp.topics);
         this.axiosInstance = axios_1.default.create({

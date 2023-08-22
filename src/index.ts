@@ -33,7 +33,7 @@ class BansApiClient {
 	public readonly content: ContentHandler;
 
 	constructor(config: Config) {
-		this.url = config.url ?? 'https://bans-api.suisei.app';
+		this.url = config.url ?? 'https://bans-api.suisei.app/v1';
 		this.amqpEndpoint = config.amqp.endpoint ?? 'bans-api.suisei.app:30555';
 
 		this.amqpHandler = new AmqpHandler(`amqp://${config.amqp.username}:${config.apiKey}@${this.amqpEndpoint}`, config.amqp.topics);
