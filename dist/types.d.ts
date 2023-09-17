@@ -135,7 +135,7 @@ export interface UserBanList {
      */
     invalidateReason: string;
 }
-export type ContentReportType = 'DOX' | 'PASTLIFE' | 'UNRELEASED';
+export type ContentReportType = 'DOX' | 'PASTLIFE' | 'UNRELEASED' | 'MISC';
 export interface ContentReport {
     /**
      * Id of the report.

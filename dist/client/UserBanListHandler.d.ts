@@ -30,6 +30,11 @@ declare class UserBanListHandler {
      */
     search(query: string, caseInsensitive?: boolean): Promise<UserBanList[]>;
     /**
+     * Find ban lists containing the user id.
+     * @param id - user id to search for
+     */
+    findUser(id: string): Promise<UserBanList[]>;
+    /**
      * Find a user ban list by id
      * @param id - id of the report
      */

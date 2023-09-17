@@ -64,6 +64,20 @@ class UserBanListHandler {
         });
     }
     /**
+     * Find ban lists containing the user id.
+     * @param id - user id to search for
+     */
+    findUser(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { data } = yield this.axiosInstance.get('/user/banlist/findUser', {
+                params: {
+                    id,
+                },
+            });
+            return data;
+        });
+    }
+    /**
      * Find a user ban list by id
      * @param id - id of the report
      */
