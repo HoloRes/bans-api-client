@@ -66,6 +66,20 @@ class UserBanListHandler {
 	}
 
 	/**
+	 * Find ban lists containing the user id.
+	 * @param id - user id to search for
+	 */
+	async findUser(id: string): Promise<UserBanList[]> {
+		const { data } = await this.axiosInstance.get('/user/banlist/findUser', {
+			params: {
+				id,
+			},
+		});
+
+		return data;
+	}
+
+	/**
 	 * Find a user ban list by id
 	 * @param id - id of the report
 	 */
