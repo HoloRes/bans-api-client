@@ -18,7 +18,7 @@ class ContentHandler {
      */
     create(report) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.post('/content/report', Object.assign(Object.assign({}, report), { validTill: report.validTill ? report.validTill.toISOString() : undefined }));
+            const { data } = yield this.axiosInstance.post('content/report', Object.assign(Object.assign({}, report), { validTill: report.validTill ? report.validTill.toISOString() : undefined }));
             return data;
         });
     }
@@ -28,7 +28,7 @@ class ContentHandler {
      */
     list(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get('/content/list', {
+            const { data } = yield this.axiosInstance.get('content/list', {
                 params: options,
             });
             return data;
@@ -40,7 +40,7 @@ class ContentHandler {
      */
     findById(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get(`/content/report/${id.toString()}`);
+            const { data } = yield this.axiosInstance.get(`content/report/${id.toString()}`);
             return data;
         });
     }
@@ -51,7 +51,7 @@ class ContentHandler {
      */
     find(query, caseInsensitive = false) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get('/content/find', {
+            const { data } = yield this.axiosInstance.get('content/find', {
                 params: {
                     query,
                     caseInsensitive,
@@ -67,7 +67,7 @@ class ContentHandler {
      */
     search(query, caseInsensitive = false) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get('/content/search', {
+            const { data } = yield this.axiosInstance.get('content/search', {
                 params: {
                     query,
                     caseInsensitive,

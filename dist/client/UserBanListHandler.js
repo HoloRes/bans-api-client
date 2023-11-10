@@ -18,7 +18,7 @@ class UserBanListHandler {
      */
     create(report) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.post('/user/banlist/create', report);
+            const { data } = yield this.axiosInstance.post('user/banlist/create', report);
             return data;
         });
     }
@@ -29,7 +29,7 @@ class UserBanListHandler {
      */
     addProof(id, proof) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.post(`/user/banlist/${id.toString()}/proof`, {
+            const { data } = yield this.axiosInstance.post(`user/banlist/${id.toString()}/proof`, {
                 proof,
             });
             return data;
@@ -41,7 +41,7 @@ class UserBanListHandler {
      */
     list(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get('/user/banlist/list', {
+            const { data } = yield this.axiosInstance.get('user/banlist/list', {
                 params: options,
             });
             return data;
@@ -54,7 +54,7 @@ class UserBanListHandler {
      */
     search(query, caseInsensitive = false) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get('/user/banlist/search', {
+            const { data } = yield this.axiosInstance.get('user/banlist/search', {
                 params: {
                     query,
                     caseInsensitive,
@@ -69,7 +69,7 @@ class UserBanListHandler {
      */
     findUser(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get('/user/banlist/findUser', {
+            const { data } = yield this.axiosInstance.get('user/banlist/findUser', {
                 params: {
                     id,
                 },
@@ -83,7 +83,7 @@ class UserBanListHandler {
      */
     findById(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get(`/user/banlist/${id.toString()}`);
+            const { data } = yield this.axiosInstance.get(`user/banlist/${id.toString()}`);
             return data;
         });
     }

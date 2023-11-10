@@ -19,7 +19,7 @@ class UserBanListHandler {
 	 * @param report - an object containing all the fields to create a report
 	 */
 	async create(report: UserBanListCreateBody): Promise<UserBanList> {
-		const { data } = await this.axiosInstance.post('/user/banlist/create', report);
+		const { data } = await this.axiosInstance.post('user/banlist/create', report);
 
 		return data;
 	}
@@ -30,7 +30,7 @@ class UserBanListHandler {
 	 * @param proof - list of links to images/files that show proof
 	 */
 	async addProof(id: string | bigint, proof: string[]): Promise<UserBanList> {
-		const { data } = await this.axiosInstance.post(`/user/banlist/${id.toString()}/proof`, {
+		const { data } = await this.axiosInstance.post(`user/banlist/${id.toString()}/proof`, {
 			proof,
 		});
 
@@ -42,7 +42,7 @@ class UserBanListHandler {
 	 * @param options - modify the offset or limit
 	 */
 	async list(options?: ListOptions): Promise<UserBanListList> {
-		const { data } = await this.axiosInstance.get('/user/banlist/list', {
+		const { data } = await this.axiosInstance.get('user/banlist/list', {
 			params: options,
 		});
 
@@ -55,7 +55,7 @@ class UserBanListHandler {
 	 * @param caseInsensitive - Disable case sensitivity
 	 */
 	async search(query: string, caseInsensitive: boolean = false): Promise<UserBanList[]> {
-		const { data } = await this.axiosInstance.get('/user/banlist/search', {
+		const { data } = await this.axiosInstance.get('user/banlist/search', {
 			params: {
 				query,
 				caseInsensitive,
@@ -70,7 +70,7 @@ class UserBanListHandler {
 	 * @param id - user id to search for
 	 */
 	async findUser(id: string): Promise<UserBanList[]> {
-		const { data } = await this.axiosInstance.get('/user/banlist/findUser', {
+		const { data } = await this.axiosInstance.get('user/banlist/findUser', {
 			params: {
 				id,
 			},
@@ -84,7 +84,7 @@ class UserBanListHandler {
 	 * @param id - id of the report
 	 */
 	async findById(id: string): Promise<UserBanList> {
-		const { data } = await this.axiosInstance.get(`/user/banlist/${id.toString()}`);
+		const { data } = await this.axiosInstance.get(`user/banlist/${id.toString()}`);
 
 		return data;
 	}

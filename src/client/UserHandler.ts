@@ -19,7 +19,7 @@ class UserHandler {
 	 * @param report - an object containing all the fields to create a report
 	 */
 	async create(report: UserReportCreateBody): Promise<UserReport> {
-		const { data } = await this.axiosInstance.post('/user/report', report);
+		const { data } = await this.axiosInstance.post('user/report', report);
 
 		return data;
 	}
@@ -30,7 +30,7 @@ class UserHandler {
 	 * @param proof - list of links to images/files that show proof
 	 */
 	async addProof(id: string | bigint, proof: string[]): Promise<UserReport> {
-		const { data } = await this.axiosInstance.post(`/user/report/${id.toString()}/proof`, {
+		const { data } = await this.axiosInstance.post(`user/report/${id.toString()}/proof`, {
 			proof,
 		});
 
@@ -42,7 +42,7 @@ class UserHandler {
 	 * @param options - modify the offset or limit
 	 */
 	async list(options?: ListOptions): Promise<List<UserReport>> {
-		const { data } = await this.axiosInstance.get('/user/list', {
+		const { data } = await this.axiosInstance.get('user/list', {
 			params: options,
 		});
 
@@ -54,7 +54,7 @@ class UserHandler {
 	 * @param query - query to search for
 	 */
 	async find(query: UserFindReports): Promise<UserReport[]> {
-		const { data } = await this.axiosInstance.post('/user/find', query);
+		const { data } = await this.axiosInstance.post('user/find', query);
 
 		return data;
 	}
@@ -64,7 +64,7 @@ class UserHandler {
 	 * @param id - id of the report
 	 */
 	async findById(id: string | bigint): Promise<UserReport> {
-		const { data } = await this.axiosInstance.get(`/user/report/${id.toString()}`);
+		const { data } = await this.axiosInstance.get(`user/report/${id.toString()}`);
 
 		return data;
 	}
@@ -74,7 +74,7 @@ class UserHandler {
 	 * @param id - Discord user id to search for
 	 */
 	async findByUserId(id: string): Promise<UserReport[]> {
-		const { data } = await this.axiosInstance.get(`/user/check/${id}`);
+		const { data } = await this.axiosInstance.get(`user/check/${id}`);
 
 		return data;
 	}

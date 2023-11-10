@@ -1,6 +1,6 @@
 {
 	"name": "@holores/bansapi.js",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "A Typescript library for the Bans API.",
 	"main": "dist/index.js",
 	"scripts": {
@@ -11,26 +11,25 @@
 		"generate:docs": "typedoc --excludeInternal --out docs src/index.ts src/types.ts",
 		"lint": "eslint src/",
 		"lint:fix": "eslint --fix src/",
-		"prepublishOnly": "pnpm run lint:fix && pnpm run build && pnpm run generate:docs",
 		"release": "np"
 	},
 	"devDependencies": {
-		"@tsconfig/node-lts": "^18.12.3",
-		"@types/amqplib": "^0.10.1",
-		"@types/node": "^20.4.2",
-		"@typescript-eslint/eslint-plugin": "^6.1.0",
-		"@typescript-eslint/parser": "^6.1.0",
-		"eslint": "^8.45.0",
+		"@tsconfig/node-lts": "^18.12.5",
+		"@types/amqplib": "^0.10.4",
+		"@types/node": "^20.9.0",
+		"@typescript-eslint/eslint-plugin": "^6.10.0",
+		"@typescript-eslint/parser": "^6.10.0",
+		"eslint": "^8.53.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-config-airbnb-typescript": "^17.1.0",
-		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-import": "^2.29.0",
 		"np": "^8.0.4",
 		"typedoc": "^0.24.8",
-		"typescript": "^5.1.6"
+		"typescript": "^5.2.2"
 	},
 	"dependencies": {
 		"amqplib": "^0.10.3",
-		"axios": "^1.4.0"
+		"axios": "^1.6.1"
 	},
 	"repository": {
 		"type": "git",

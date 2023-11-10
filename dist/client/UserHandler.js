@@ -18,7 +18,7 @@ class UserHandler {
      */
     create(report) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.post('/user/report', report);
+            const { data } = yield this.axiosInstance.post('user/report', report);
             return data;
         });
     }
@@ -29,7 +29,7 @@ class UserHandler {
      */
     addProof(id, proof) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.post(`/user/report/${id.toString()}/proof`, {
+            const { data } = yield this.axiosInstance.post(`user/report/${id.toString()}/proof`, {
                 proof,
             });
             return data;
@@ -41,7 +41,7 @@ class UserHandler {
      */
     list(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get('/user/list', {
+            const { data } = yield this.axiosInstance.get('user/list', {
                 params: options,
             });
             return data;
@@ -53,7 +53,7 @@ class UserHandler {
      */
     find(query) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.post('/user/find', query);
+            const { data } = yield this.axiosInstance.post('user/find', query);
             return data;
         });
     }
@@ -63,7 +63,7 @@ class UserHandler {
      */
     findById(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get(`/user/report/${id.toString()}`);
+            const { data } = yield this.axiosInstance.get(`user/report/${id.toString()}`);
             return data;
         });
     }
@@ -73,7 +73,7 @@ class UserHandler {
      */
     findByUserId(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { data } = yield this.axiosInstance.get(`/user/check/${id}`);
+            const { data } = yield this.axiosInstance.get(`user/check/${id}`);
             return data;
         });
     }

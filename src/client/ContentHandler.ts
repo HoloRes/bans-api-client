@@ -19,7 +19,7 @@ class ContentHandler {
 	 * @param report - an object containing all the fields to create a report
 	 */
 	async create(report: ContentReportCreateBody): Promise<ContentReport> {
-		const { data } = await this.axiosInstance.post('/content/report', {
+		const { data } = await this.axiosInstance.post('content/report', {
 			...report,
 			validTill: report.validTill ? report.validTill.toISOString() : undefined,
 		});
@@ -32,7 +32,7 @@ class ContentHandler {
 	 * @param options - modify the offset or limit
 	 */
 	async list(options?: ListOptions): Promise<List<ContentReport>> {
-		const { data } = await this.axiosInstance.get('/content/list', {
+		const { data } = await this.axiosInstance.get('content/list', {
 			params: options,
 		});
 
@@ -44,7 +44,7 @@ class ContentHandler {
 	 * @param id - id of the report
 	 */
 	async findById(id: string | bigint): Promise<ContentReport> {
-		const { data } = await this.axiosInstance.get(`/content/report/${id.toString()}`);
+		const { data } = await this.axiosInstance.get(`content/report/${id.toString()}`);
 
 		return data;
 	}
@@ -55,7 +55,7 @@ class ContentHandler {
 	 * @param caseInsensitive - Disable case sensitivity
 	 */
 	async find(query: string, caseInsensitive: boolean = false): Promise<ContentReport[]> {
-		const { data } = await this.axiosInstance.get('/content/find', {
+		const { data } = await this.axiosInstance.get('content/find', {
 			params: {
 				query,
 				caseInsensitive,
@@ -71,7 +71,7 @@ class ContentHandler {
 	 * @param caseInsensitive - Disable case sensitivity
 	 */
 	async search(query: string, caseInsensitive: boolean = false): Promise<ContentReport[]> {
-		const { data } = await this.axiosInstance.get('/content/search', {
+		const { data } = await this.axiosInstance.get('content/search', {
 			params: {
 				query,
 				caseInsensitive,
